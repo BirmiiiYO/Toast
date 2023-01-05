@@ -32,7 +32,7 @@ class Toast {
     this.toasts = this.toasts.filter(toast => toast.id !== toastId)
   }
 
-  public generateToast = (toastOptions: TToastProps): IToast => ({
+  public createToast = (toastOptions: TToastProps): IToast => ({
     id: uuid(),
     ...toastOptions,
   })

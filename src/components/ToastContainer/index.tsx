@@ -24,7 +24,7 @@ export const ToastContainer = forwardRef<RefType, ToastBlockProps>(
     },
     ref
   ) => {
-    const { toasts, removeToast, getAllToasts, generateToast, addToast } = toastService
+    const { toasts, removeToast, getAllToasts, createToast, addToast } = toastService
     const { loaded, portalId } = useToastPortal()
 
     const [removingId, setRemovingId] = useState('')
@@ -50,7 +50,7 @@ export const ToastContainer = forwardRef<RefType, ToastBlockProps>(
 
     useImperativeHandle(ref, () => ({
       addMessage(toast: TToastProps) {
-        const newToast = generateToast(toast)
+        const newToast = createToast(toast)
         addToast(newToast)
         setToastsLength(toasts.length)
       },
