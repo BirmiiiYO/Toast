@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useImperativeHandle, forwardRef } from 'react'
+import  { forwardRef,useEffect, useImperativeHandle, useState } from 'react'
 import ReactDOM from 'react-dom'
 
-import { ToastPortalProps } from './types'
+import { Toast } from '@/components/Toast'
 import { ToastMargin, ToastPosition } from '@/constants/toastConditions'
+import { useToast } from '@/hooks/useToast'
 import { TToastProps } from '@/types/toastParams'
-import { useToastPortal } from '@/hooks/useToastPortal'
 import toastService from '@/utilities/ToastClass'
 
-import { Toast } from '@/components/Toast'
-
 import { ToastContainer } from './styles'
+import { ToastPortalProps } from './types'
 
 type RefType = {
   addMessage: (toast: TToastProps) => void
@@ -26,7 +25,7 @@ export const ToastPortal = forwardRef<RefType, ToastPortalProps>(
     ref
   ) => {
     const { toasts, removeToast, getAllToasts, generateToast, addToast } = toastService
-    const { loaded, portalId } = useToastPortal()
+    const { loaded, portalId } = useToast()
 
     const [removingId, setRemovingId] = useState('')
     const [toastsLength, setToastsLength] = useState(getAllToasts().length)

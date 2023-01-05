@@ -1,4 +1,4 @@
-import { Mode,Animation } from "@/types/toastParams"
+import { Animation,Mode } from "@/types/toastParams"
 
 export type ToastProps = {
   title: string,

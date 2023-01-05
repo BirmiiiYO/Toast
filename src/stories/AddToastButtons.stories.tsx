@@ -1,7 +1,7 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { ComponentMeta,ComponentStory } from '@storybook/react'
 
 import { AddToastButtons } from '@/components/AddToastButtons'
-import { ToastPosition, ToastMargin } from '@/constants/toastConditions'
+import { ToastMargin,ToastPosition } from '@/constants/toastConditions'
 
 export default {
   title: 'AddToastButtons',

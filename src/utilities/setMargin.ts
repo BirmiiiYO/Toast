@@ -1,11 +1,10 @@
-import { Margin } from '@/types/toastParams';
-
 import { ToastMargin } from '@/constants/toastConditions'
+import { Margin } from '@/types/toastParams'
 
 const setMargin = (margin: Margin) => {
   switch (margin) {
     case ToastMargin.LARGE: {
-      return  24
+      return 24
     }
     case ToastMargin.MEDIUM: {
       return 16

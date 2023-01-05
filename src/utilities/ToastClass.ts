@@ -1,9 +1,10 @@
 import { v4 as uuid } from 'uuid'
 
-import { TToastProps, IToast } from '@/types/toastParams'
+import { IToast,TToastProps } from '@/types/toastParams'
 
 class Toast {
   private static instance: Toast
+
   toasts!: IToast[]
 
   constructor() {

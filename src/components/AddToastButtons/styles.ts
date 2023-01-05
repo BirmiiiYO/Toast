@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
-
 export const Button = styled.button`
-padding:8px;
-margin:8px;
-background-color: red;
+  background-color: red;
+  margin: 8px;
+  padding: 8px;
 `

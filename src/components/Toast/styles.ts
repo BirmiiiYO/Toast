@@ -1,48 +1,55 @@
-import { setBgColor } from '@/utilities/setBgColor';
-import {setAnimation} from '@/utilities/setAnimation'
 import styled from 'styled-components'
-import {ToastContainerProps} from './types'
+
+import { setAnimation } from '@/utilities/setAnimation'
+import { setBgColor } from '@/utilities/setBgColor'
+
+import { ToastContainerProps } from './types'
 
 export const ToastInfo = styled.div``
 
-export const ToastContainer = styled.div<ToastContainerProps>`
-position:relative;
-max-width: 300px;
-min-height: 100px;
-display:flex;
+export const ToastContainer =
+  styled.div <
+  ToastContainerProps >
+  `
 align-items: center;
-justify-content: start;
-background-color: ${({ mode, backgroundColor}) => setBgColor(mode,backgroundColor)};
-color: white;
+animation-duration: 0.5s;
+animation-name: ${({ animationType }) =>
+    setAnimation(animationType)};
+background-color: ${({ mode, backgroundColor }) =>
+    setBgColor(mode, backgroundColor)};
 border-radius: 5px;
 box-sizing: border-box;
-animation-name: ${({ animationType}) => setAnimation(animationType)};
-animation-duration: 0.5s;
+color: white;
+display:flex;
+justify-content: start;
+max-width: 300px;
+min-height: 100px;
+position:relative;
 `
 
 export const ToastIcon = styled.img`
   height: 30px;
-  padding: 0  20px;
+  padding: 0 20px;
   width: 30px;
 `
 
 export const ToastClose = styled.img`
+  cursor: pointer;
   height: 20px;
   position: absolute;
-  cursor:pointer;
   right: 10px;
   top: 10px;
   width: 20px;
 `
 
 export const ToastTitle = styled.h1`
-  width:200px;
-  overflow: hidden;
   font-size: 24px;
   margin: 0px;
+  overflow: hidden;
+  width: 200px;
 `
 
 export const ToastDescription = styled.span`
-  max-width:200px;
   font-size: 18px;
+  max-width: 200px;
 `

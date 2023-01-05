@@ -1,10 +1,9 @@
+import { ComponentMeta,ComponentStory } from '@storybook/react'
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Toast } from '@/components/Toast'
+import { ToastAnimation,ToastMode, ToastPosition } from '@/constants/toastConditions'
 
-import { ToastAnimation,ToastMode} from '@/constants/toastConditions'
-import { ToastPosition } from '@/constants/toastConditions'
 
 export default {
   title: 'Toast',

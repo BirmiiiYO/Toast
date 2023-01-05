@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { v4 as uuid } from 'uuid'
 
-export const useToastPortal = () => {
+export const useToast = () => {
   const [loaded, setLoaded] = useState(false)
   const [portalId] = useState(`${uuid()}`)
 
@@ -12,7 +12,9 @@ export const useToastPortal = () => {
     setLoaded(true)
 
     return () => {
-      document.getElementsByTagName('body')[0].removeChild(div)
+      document
+        .getElementsByTagName('body')[0]
+        .removeChild(div)
     }
   }, [portalId])
 

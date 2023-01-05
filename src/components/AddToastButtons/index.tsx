@@ -1,23 +1,27 @@
 import React, { FC } from 'react'
 
-import { ToastMode, ToastAnimation } from '@/constants/toastConditions'
-import { useToastRef } from '@/hooks/useToastRef'
-import { ToastPortalProps } from '@/components/ToastPortal/types'
-
 import { ToastPortal } from '@/components/ToastPortal'
+import { ToastPortalProps } from '@/components/ToastPortal/types'
+import {
+  ToastAnimation,
+  ToastMode,
+} from '@/constants/toastConditions'
+import { useToastRef } from '@/hooks/useToastRef'
 
 import { Button } from './styles'
 
-export const AddToastButtons: FC<ToastPortalProps> = (props) => {
+export const AddToastButtons: FC<ToastPortalProps> = (
+  props,
+) => {
   const { toastRef, addToast } = useToastRef()
-  const {position} = props
+  const { position } = props
   const addSuccess = () =>
     addToast({
       title: 'Success',
       mode: ToastMode.SUCCESS,
       description: 'Success message',
       animationType: ToastAnimation.SCALE,
-      position
+      position,
     })
 
   const addInfo = () =>
@@ -26,7 +30,7 @@ export const AddToastButtons: FC<ToastPortalProps> = (props) => {
       mode: ToastMode.INFO,
       description: 'Info message',
       animationType: ToastAnimation.MOVE,
-      position
+      position,
     })
 
   const addWarning = () =>
@@ -35,7 +39,7 @@ export const AddToastButtons: FC<ToastPortalProps> = (props) => {
       mode: ToastMode.WARNING,
       description: 'Warning message',
       animationType: ToastAnimation.SCALE,
-      position
+      position,
     })
 
   const addError = () =>
@@ -44,7 +48,7 @@ export const AddToastButtons: FC<ToastPortalProps> = (props) => {
       mode: ToastMode.ERROR,
       description: 'Error message',
       animationType: ToastAnimation.MOVE,
-      position
+      position,
     })
 
   return (

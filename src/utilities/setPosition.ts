@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
 
 import { ToastPosition } from '@/constants/toastConditions'
-import { Position } from '@/types/toastParams';
+import { Position } from '@/types/toastParams'
 
 const setPosition = (position: Position) => {
   switch (position) {

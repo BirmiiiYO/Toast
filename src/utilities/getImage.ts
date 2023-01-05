@@ -1,11 +1,11 @@
-import { Mode } from '@/types/toastParams';
+import { FunctionComponent, SVGAttributes } from 'react'
 
 import iconError from '@/assets/svg/iconError.svg'
 import iconInfo from '@/assets/svg/iconInfo.svg'
 import iconSuccess from '@/assets/svg/iconSuccess.svg'
 import iconWarning from '@/assets/svg/iconWarning.svg'
 import { ToastMode } from '@/constants/toastConditions'
-import { FunctionComponent, SVGAttributes } from 'react';
+import { Mode } from '@/types/toastParams'
 
 export const getImage = (mode: Mode): string => {
   switch (mode) {
