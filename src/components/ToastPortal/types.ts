@@ -1,8 +1,8 @@
-import { Margin, Position } from "@/types/toastParams"
+import { Margin, Position } from '@/types/toastParams'
 
 export type ToastPortalProps = {
-  autoClose: boolean
-  autoCloseTime: number
-  position: Position
-  margin: Margin
+  autoClose: boolean,
+  autoCloseTime: number,
+  position: Position,
+  margin: Margin,
 }

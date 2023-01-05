@@ -4,7 +4,7 @@ import { Mode } from '@/types/toastParams'
 
 export const setBgColor = (
   mode: Mode,
-  backgroundColor: string,
+  backgroundColor = '',
 ) => {
   if (backgroundColor) {
     return backgroundColor

@@ -19,6 +19,15 @@
       "prettier",
       "plugin:react/recommended"
     ],
+    "overrides": [
+      {
+        "files": ["*.ts", "*.tsx"], 
+        "extends": [
+          "plugin:@typescript-eslint/recommended",
+          "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        ]
+      }
+    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "project": "./tsconfig.json",
@@ -51,8 +60,12 @@
       "better-styled-components/sort-declarations-alphabetically": 2,
       "sort-imports": "off",
       "import/order": "off",
+      "prettier/prettier":"off",
       "default-param-last": "off",
+      "@typescript-eslint/no-non-null-assertion":"off",
+      "react/display-name":"off",
       "@typescript-eslint/default-param-last": ["error"]
     }
   }
+
   

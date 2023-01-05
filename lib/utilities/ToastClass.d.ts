@@ -1,12 +1,12 @@
-import { IToastParams, IToast } from '@/types/toastParams';
-declare class ToastService {
+import { IToast, TToastProps } from '@/types/toastParams';
+declare class Toast {
     private static instance;
     toasts: IToast[];
     constructor();
     getAllToasts: () => IToast[];
     addToast: (toast: IToast) => void;
     removeToast: (toastId: string) => void;
-    generateToast: (toastOptions: IToastParams) => IToast;
+    generateToast: (toastOptions: TToastProps) => IToast;
 }
-declare const toastService: ToastService;
+declare const toastService: Toast;
 export default toastService;

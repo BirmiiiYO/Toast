@@ -10,9 +10,7 @@ import { useToastRef } from '@/hooks/useToastRef'
 
 import { Button } from './styles'
 
-export const AddToastButtons: FC<ToastPortalProps> = (
-  props,
-) => {
+export const TestToast: FC<ToastPortalProps> = (props) => {
   const { toastRef, addToast } = useToastRef()
   const { position } = props
   const addSuccess = () =>

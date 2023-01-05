@@ -1,28 +1,14 @@
+import { Animation, Mode } from '@/types/toastParams';
 export declare type ToastProps = {
     title: string;
-    mode: string;
-    message: string;
-    animationType: string;
+    mode: Mode;
+    description: string;
+    animationType: Animation;
     backgroundColor?: string;
-    position: string;
     onClose: () => void;
-    onDragDelete: () => void;
 };
-export declare type StyledToastProps = {
-    mode: string;
+export declare type ToastContainerProps = {
+    mode: Mode;
     backgroundColor?: string;
-    reverse: boolean;
-    animationType: string;
-    position: string;
+    animationType: Animation;
 };
-export declare enum ToastMode {
-    INFO = "info",
-    SUCCESS = "success",
-    WARNING = "warning",
-    ERROR = "error"
-}
-export declare enum AnimationMode {
-    FADE = "fade",
-    SCALE = "scale",
-    MOVE = "move"
-}

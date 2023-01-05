@@ -1,8 +1,8 @@
-import React from 'react';
+/// <reference types="react" />
+import { TToastProps } from '@/types/toastParams';
 import { ToastPortalProps } from './types';
-import { IToastParams } from '@/types/toastParams';
 declare type RefType = {
-    addMessage: (toast: IToastParams) => void;
+    addMessage: (toast: TToastProps) => void;
 };
-export declare const ToastPortal: React.ForwardRefExoticComponent<ToastPortalProps & React.RefAttributes<RefType>>;
+export declare const ToastPortal: import("react").ForwardRefExoticComponent<ToastPortalProps & import("react").RefAttributes<RefType>>;
 export {};

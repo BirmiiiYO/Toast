@@ -14,6 +14,7 @@ export type TToastProps = {
   title: string
   animationType: Animation
   backgroundColor?: string
+  position: Position
 }
 
 export interface IToast extends TToastProps {

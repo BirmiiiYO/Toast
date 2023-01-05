@@ -1,11 +1,15 @@
-export declare type IToastParams = {
-    mode: string;
-    message: string;
+export declare type Mode = 'success' | 'warning' | 'info' | 'error';
+export declare type Animation = 'scale' | 'move';
+export declare type Margin = 'none' | 'small' | 'medium' | 'large';
+export declare type Position = 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
+export declare type TToastProps = {
+    mode: Mode;
+    description: string;
     title: string;
-    animationType: string;
+    animationType: Animation;
     backgroundColor?: string;
-    position: string;
+    position: Position;
 };
-export interface IToast extends IToastParams {
+export interface IToast extends TToastProps {
     id: string;
 }

@@ -1,4 +1,4 @@
-export declare const useToastPortal: () => {
+export declare const useToast: () => {
     loaded: boolean;
     portalId: string;
 };

@@ -18,7 +18,7 @@ export const ToastPortal = forwardRef<RefType, ToastPortalProps>(
   (
     {
       autoClose = false,
-      autoCloseTime = 4000,
+      autoCloseTime = 3000,
       position = ToastPosition.TOP_RIGHT,
       margin = ToastMargin.NONE,
     },
@@ -82,6 +82,7 @@ export const ToastPortal = forwardRef<RefType, ToastPortalProps>(
                />
               ))}
           </ToastContainer>,
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           document.getElementById(portalId)!
         )
       : null

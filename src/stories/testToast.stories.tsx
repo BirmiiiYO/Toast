@@ -1,11 +1,11 @@
 import { ComponentMeta,ComponentStory } from '@storybook/react'
 
-import { AddToastButtons } from '@/components/AddToastButtons'
+import { TestToast } from '@/components/TestToast'
 import { ToastMargin,ToastPosition } from '@/constants/toastConditions'
 
 export default {
-  title: 'AddToastButtons',
-  component: AddToastButtons,
+  title: 'Test Toast',
+  component: TestToast,
   argTypes: {
     position: {
       control: 'select',
@@ -20,9 +20,10 @@ export default {
       options: Object.values(ToastMargin),
     },
   },
-} as ComponentMeta<typeof AddToastButtons>
+} as ComponentMeta<typeof TestToast>;
 
-const Template: ComponentStory<typeof AddToastButtons> = (args) => <AddToastButtons {...args} />
+
+const Template: ComponentStory<typeof TestToast> = (args) => <TestToast {...args} />
 
 
 export const Default = Template.bind({})

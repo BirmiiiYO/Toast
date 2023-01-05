@@ -1,5 +1,3 @@
-import { FunctionComponent, SVGAttributes } from 'react'
-
 import iconError from '@/assets/svg/iconError.svg'
 import iconInfo from '@/assets/svg/iconInfo.svg'
 import iconSuccess from '@/assets/svg/iconSuccess.svg'
