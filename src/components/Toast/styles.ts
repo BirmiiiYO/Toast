@@ -1,15 +1,16 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import styled from 'styled-components'
 
 import { setAnimation } from '@/utilities/setAnimation'
 import { setBgColor } from '@/utilities/setBgColor'
 
-import { ToastContainerProps } from './types'
+import { ToastBlockProps } from './types'
 
 export const ToastInfo = styled.div``
 
-export const ToastContainer =
+export const ToastBlock =
   styled.div <
-  ToastContainerProps >
+  ToastBlockProps >
   `
 align-items: center;
 animation-duration: 0.5s;

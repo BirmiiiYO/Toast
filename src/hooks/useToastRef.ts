@@ -1,9 +1,9 @@
 import { useRef } from 'react'
 
-import { ToastPortal } from '@/components/ToastPortal'
+import { ToastContainer } from '@/components/ToastContainer'
 import { TToastProps } from '@/types/toastParams'
 
-type ToastPortalRef = React.ElementRef<typeof ToastPortal>
+type ToastPortalRef = React.ElementRef<typeof ToastContainer>
 
 export const useToastRef = () => {
   const toastRef = useRef<ToastPortalRef>(null)

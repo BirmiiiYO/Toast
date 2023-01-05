@@ -9,7 +9,7 @@ export type ToastProps = {
   onClose: () => void,
 }
 
-export type ToastContainerProps = {
+export type ToastBlockProps = {
   mode: Mode,
   backgroundColor?: string,
   animationType: Animation,

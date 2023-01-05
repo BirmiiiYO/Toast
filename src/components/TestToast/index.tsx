@@ -1,7 +1,7 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 
-import { ToastPortal } from '@/components/ToastPortal'
-import { ToastPortalProps } from '@/components/ToastPortal/types'
+import { ToastContainer } from '@/components/ToastContainer'
+import { ToastBlockProps } from '@/components/ToastContainer/types'
 import {
   ToastAnimation,
   ToastMode,
@@ -10,7 +10,7 @@ import { useToastRef } from '@/hooks/useToastRef'
 
 import { Button } from './styles'
 
-export const TestToast: FC<ToastPortalProps> = (props) => {
+export const TestToast: FC<ToastBlockProps> = (props) => {
   const { toastRef, addToast } = useToastRef()
   const { position } = props
   const addSuccess = () =>
@@ -55,7 +55,7 @@ export const TestToast: FC<ToastPortalProps> = (props) => {
       <Button onClick={addInfo}>Info Toast</Button>
       <Button onClick={addWarning}>Warning Toast</Button>
       <Button onClick={addError}>Error Toast</Button>
-      <ToastPortal ref={toastRef} {...props} />
+      <ToastContainer ref={toastRef} {...props} />
     </>
   )
 }

@@ -7,14 +7,14 @@ import { useToast } from '@/hooks/useToast'
 import { TToastProps } from '@/types/toastParams'
 import toastService from '@/utilities/ToastClass'
 
-import { ToastContainer } from './styles'
-import { ToastPortalProps } from './types'
+import { ToastBlock } from './styles'
+import { ToastBlockProps } from './types'
 
 type RefType = {
   addMessage: (toast: TToastProps) => void
 }
 
-export const ToastPortal = forwardRef<RefType, ToastPortalProps>(
+export const ToastContainer = forwardRef<RefType, ToastBlockProps>(
   (
     {
       autoClose = false,
@@ -63,7 +63,7 @@ export const ToastPortal = forwardRef<RefType, ToastPortalProps>(
 
     return loaded
       ? ReactDOM.createPortal(
-          <ToastContainer
+          <ToastBlock
             position={position}
             autoClose={autoClose}
             autoCloseTime={autoCloseTime}
@@ -81,7 +81,7 @@ export const ToastPortal = forwardRef<RefType, ToastPortalProps>(
                   onClose={handleClose(id)}
                />
               ))}
-          </ToastContainer>,
+          </ToastBlock>,
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           document.getElementById(portalId)!
         )

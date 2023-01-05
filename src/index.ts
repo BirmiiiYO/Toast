@@ -1,4 +1,4 @@
-import { ToastPortal } from '@/components/ToastPortal'
+import { ToastContainer } from '@/components/ToastContainer'
 import { useToastRef } from '@/hooks/useToastRef'
 
-export { ToastPortal, useToastRef }
+export { ToastContainer, useToastRef }

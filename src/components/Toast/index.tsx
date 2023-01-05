@@ -3,8 +3,8 @@ import { ToastAnimation } from '@/constants/toastConditions'
 import { getImage } from '@/utilities/getImage'
 
 import {
+  ToastBlock,
   ToastClose,
-  ToastContainer,
   ToastDescription,
   ToastIcon,
   ToastInfo,
@@ -25,7 +25,7 @@ export const Toast = ({
   }
 
   return (
-    <ToastContainer
+    <ToastBlock
       mode={mode}
       backgroundColor={backgroundColor}
       animationType={animationType}>
@@ -39,6 +39,6 @@ export const Toast = ({
         src={iconClose}
         alt="close notification"
       />
-    </ToastContainer>
+    </ToastBlock>
   )
 }

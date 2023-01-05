@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import { setMargin } from '@/utilities/setMargin'
 import { setPosition } from '@/utilities/setPosition'
 
-import { ToastPortalProps } from './types'
+import { ToastBlockProps } from './types'
 
-export const ToastContainer =
+export const ToastBlock =
   styled.div <
-  ToastPortalProps >
+  ToastBlockProps >
   `
   display: flex;
   flex-direction: column;
