@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 import { Toast } from '@/components/Toast'
 import { ToastMargin, ToastPosition } from '@/constants/toastConditions'
-import { useToast } from '@/hooks/useToast'
+import { useToastPortal} from '@/hooks/useToastPortal'
 import { TToastProps } from '@/types/toastParams'
 import toastService from '@/utilities/ToastClass'
 
@@ -25,7 +25,7 @@ export const ToastContainer = forwardRef<RefType, ToastBlockProps>(
     ref
   ) => {
     const { toasts, removeToast, getAllToasts, generateToast, addToast } = toastService
-    const { loaded, portalId } = useToast()
+    const { loaded, portalId } = useToastPortal()
 
     const [removingId, setRemovingId] = useState('')
     const [toastsLength, setToastsLength] = useState(getAllToasts().length)

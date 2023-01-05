@@ -1,4 +1,8 @@
+/// <reference types="react" />
+import { TToastProps } from '@/types/toastParams';
 export declare const useToast: () => {
-    loaded: boolean;
-    portalId: string;
+    toastRef: import("react").RefObject<{
+        addMessage: (toast: TToastProps) => void;
+    }>;
+    addToast: (options: TToastProps) => void;
 };

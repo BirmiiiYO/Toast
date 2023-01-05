@@ -61,6 +61,7 @@
       "sort-imports": "off",
       "import/order": "off",
       "prettier/prettier":"off",
+      "@typescript-eslint/no-unsafe-call": "off",
       "default-param-last": "off",
       "@typescript-eslint/no-non-null-assertion":"off",
       "react/display-name":"off",

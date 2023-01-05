@@ -6,12 +6,12 @@ import {
   ToastAnimation,
   ToastMode,
 } from '@/constants/toastConditions'
-import { useToastRef } from '@/hooks/useToastRef'
+import { useToast} from '@/hooks/useToast'
 
 import { Button } from './styles'
 
 export const TestToast: FC<ToastBlockProps> = (props) => {
-  const { toastRef, addToast } = useToastRef()
+  const { toastRef, addToast } = useToast()
   const { position } = props
   const addSuccess = () =>
     addToast({

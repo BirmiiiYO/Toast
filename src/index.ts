@@ -1,4 +1,4 @@
 import { ToastContainer } from '@/components/ToastContainer'
-import { useToastRef } from '@/hooks/useToastRef'
+import { useToast } from '@/hooks/useToast'
 
-export { ToastContainer, useToastRef }
+export { ToastContainer, useToast}

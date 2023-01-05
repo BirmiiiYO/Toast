@@ -1,22 +1,21 @@
-import { useEffect, useState } from 'react'
-import { v4 as uuid } from 'uuid'
+import { useRef } from 'react'
+
+import { ToastContainer } from '@/components/ToastContainer'
+import { TToastProps } from '@/types/toastParams'
+
+type ToastPortalRef = React.ElementRef<typeof ToastContainer>
 
 export const useToast = () => {
-  const [loaded, setLoaded] = useState(false)
-  const [portalId] = useState(`${uuid()}`)
+  const toastRef = useRef<ToastPortalRef>(null)
 
-  useEffect(() => {
-    const div = document.createElement('div')
-    div.setAttribute('id', portalId)
-    document.getElementsByTagName('body')[0].prepend(div)
-    setLoaded(true)
-
-    return () => {
-      document
-        .getElementsByTagName('body')[0]
-        .removeChild(div)
+  const addToast = (options: TToastProps) => {
+    if (toastRef.current) {
+      toastRef.current.addMessage({ ...options })
     }
-  }, [portalId])
+  }
 
-  return { loaded, portalId }
+  return {
+    toastRef,
+    addToast,
+  }
 }
