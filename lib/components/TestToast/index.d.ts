@@ -1,3 +1,3 @@
 import { FC } from 'react';
-import { ToastPortalProps } from '@/components/ToastPortal/types';
-export declare const TestToast: FC<ToastPortalProps>;
+import { ToastBlockProps } from '@/components/ToastContainer/types';
+export declare const TestToast: FC<ToastBlockProps>;
