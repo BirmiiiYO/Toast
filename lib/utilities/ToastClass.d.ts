@@ -6,7 +6,7 @@ declare class Toast {
     getAllToasts: () => IToast[];
     addToast: (toast: IToast) => void;
     removeToast: (toastId: string) => void;
-    generateToast: (toastOptions: TToastProps) => IToast;
+    createToast: (toastOptions: TToastProps) => IToast;
 }
 declare const toastService: Toast;
 export default toastService;
