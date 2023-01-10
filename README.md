@@ -1,112 +1,132 @@
-# Tестовое задание библиотека Toast
+### `toast-aura allows you to create notification in 5 steps`
 
-## Содержание
+## Installation
 
-- [Техническое задание](#Техническое-задание)
-- [Используемые технологии](#Используемые-технологии)
-- [Структура проекта](#Структура-проекта)
-- [Тестирование](#Тестирование)
-- [Как начать](#Как-начать)
-- [Полезные ссылки](#Полезные-ссылки)
+```
+npm i toast-lib-react
+yarn add toast-lib-react
+```
 
-## Техническое задание
-Необходимо реализовать ***Toast*** библиотеку Javascript, для представления не блокирующих уведомлений . Цель состоит в том, чтобы создать базовую библиотеку, которую можно настраивать и расширять.
+## Features
 
-#### Необходимый функционал:
+- Settings of toast place
+- Settings of toast appearance animation
+- Settings of toast title
+- Settings of toast message
+- Settings of toast type
+- Settings of autoClose ability and time
 
-- Показать уведомление.
-- Возможность устанавливать положению уведомления.
-- Возможность устанавливать тип уведомления (уведомления об успехе, ошибке, оповещение и т.д.).
-- Возможность устанавливать длительность показа уведомления.
-- Возможность задавать заголовок и описание уведомления.
-- Возможность устанавливать отступы уведомления.
-- Возможность изменять цвет типа уведомлений.
-- Возможность изменять анимацию появления и исчезновения.
+## Example
 
-#### Дополнительный функционал:
+```
+import { ToastPortal, useToastRef } from 'toast-lib-react'
 
-- Возможность "смахивать" уведомления в сторону для быстрого закрытия.
-- Показ до 3 уведомлений одновременно.
+const SuccessSettings = {
+  title: 'Success',
+  mode: 'success',
+  message: 'This is example of success toast',
+  animationType: 'move',
+  position: 'topRight',
+}
 
-#### Пример графического представления:
+const PortalSettings = {
+  autoClose: false,
+  autoCloseTime: 3000,
+  position: 'topRight',
+  margin: 'none',
+}
 
-Ссылка на макет: [Макет "Toast"](https://xd.adobe.com/view/9efd755b-6a29-49bf-4e13-d5cd74643170-e8cc/). Также его можно найти в папке **doc** c расширением **.xd** для программы **Adobe XD**.
+export const Example = () => {
 
-> ![example_1](https://github.com/slava-ovchinnikov/education-task-toast-lib/blob/master/doc/example_1.png?raw=true)
+  const { toastRef, addToast } = useToastRef()
 
-#### Также проект предполагает:
-- Разделить библиотеку на два основных компонента: представления и логики. Для реализации логики приложения необходимо использовать порождающий паттерн программирования ***"Одиночка"***, который гарантирует, что у класса есть только один экземпляр, и предоставляет к нему глобальную точку доступа (см. подробнее [паттерн Одиночка](https://refactoring.guru/ru/design-patterns/singleton)). При помощи паттерна создать сервисный класс, в котором вы будете задавать конфигурацию и вызывать уведомление. Для реализация представления необходимо использовать **react portals**.
+  const addSuccess = () => addToast({
+    ...SuccessSettings })
 
-- Настроить конфигурации ***babel***, ***eslint***.
+  return (
+    <>
+      <button onClick={addSuccess}> Test Success Toast</button>
+      <ToastPortal ref={toastRef} {...PortalSettings} />
+    </>
+  )
+}
 
-- Подключить и настроить бандлер ***Rollup*** для сборки проекта в библиотеку.
+```
 
-- Подключить и настроить ***Strorybook*** для проверки работоспособности вашей библиотеки.
+## Steps to create a Toast
 
-- Обработку ошибок через паттерн ***Error Boundaries***
+1.  Import functions from the library
 
-- Проверку типов в React компонентах, передаваемых параметров и подобных объектов.
+```
+  import { ToastPortal, useToastREf } from 'toast-lib-react'
+```
 
-- Использование алиасов для импортирования файлов.
+2.  Create objects with settings for Toast and ToastPortal
 
-## Используемые технологии
+```
+   const ToastSettings = {
+       title: 'Success',
+       mode: 'success',
+       message: 'This is example of success toast',
+       animationType: 'move',
+       position: 'topRight',
+   }
 
-### Для react
-- ***node.js*** - программная платформа, основанная на движке V8 (транслирующем JavaScript в машинный код).
-- ***babel*** - транспайлер, преобразующий код из одного стандарта в другой.
-- ***eslint*** - линтер для JavaScript кода.
-- ***yarn*** - менеджер пакетов.
-- ***rollup*** - сборщик ES-модулей.
-- ***stortbook*** - инструмент, используемый для разработки компонентов пользовательского интерфейса в изоляции.
-- ***react*** - JavaScript-библиотека для создания пользовательских интерфейсов.
-- ***prop-types*** - набор валидаторов, которые могут быть использованы для проверки получаемых данных.
-- ***styled-components*** - система стилизации react компонентов.
-- ***cypress*** — e2e тестирование для веб приложений.
+   const PortalSettings = {
+       autoClose: false,
+       autoCloseTime: 3000,
+       position: 'topRight',
+       margin: 'none',
+   }
+```
 
- ### Для react native
-Will be soon...
+3. Distract `toastRef` and `addToast` from `useToastRef()` inside your component
 
-## Структура проекта
+```
+    const { toastRef, addToast } = useToastRef()
 
-Структура проекта должна быть реализована в том же стиле, что и в первом тестовом задании (см. [Структура проекта](https://github.com/slava-ovchinnikov/education-task-calculator#%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0)).
+```
 
-## Тестирование
+4. Create event handler with Toast settings `ToastSettings` and call the Toast
 
-Реализовать e2e тестирование c полным покрытием функционала приложения:
-- Сервис для конфигурации Toast-компонента.
-- Графическое (компонент модуля и т.д.)
+```
+    const addSuccess = () => addToast({
+        ...DefaultSuccessProperties })
 
-## Как начать
+    <button onClick={addSuccess}> Test Success Toast </button>
+```
 
-Эта инструкция поможет вам сделать копию проекта и запустить его на вашей локальной машине для разработки и тестирования.
+5. Place `ToastPortal` with `useToastRef` and `PortalSettings`
 
-### React/ReactNative
+```
+    return (
+        <>
+           <button onClick={addSuccess}>
+               Test Success Toast
+           </button>
+           <ToastPortal
+               ref={toastRef}
+               {...PortalSettings} />
+           </>
+    )
+```
 
-#### Установка 
+## Available settings
 
-Для того чтобы получить шаблон проекта, необходимо сделать следующее:
+### Toast:
 
-1. Зарегистрировать аккаунт в github.
-2. Получить доступ к репозиторию с шаблоном.
-3. Импортировать шаблон в свой репозиторий.
-4. Склонировать репозиторий на свою локальную машину.
+- `title` - any text
+- `mode` - 'info', 'success', 'warning', 'error'
+- `message` - any text'
+- `backgroundColor` - string
+- `animationType` - 'fade', 'scale', 'move'
+- `position` - 'topRight', 'topLeft', 'bottomRight', bottomLeft'
 
-> ![template_1](https://github.com/slava-ovchinnikov/education-task-calculator/blob/master/doc/template.png?raw=true)
+### TaostPortal:
 
-## Полезные ссылки
+- `autoClose` - boolean
+- `autoCloseTime` - number
+- `position` - 'topRight', 'topLeft', 'bottomRight', bottomLeft'
+- `margin` - 'none', 'small'(5px), 'medium'(10px), 'large'(20px)
 
-[React](https://reactjs.org/docs/getting-started.html)
-
-[Rollup](https://rollupjs.org/guide/en/)
-
-[Storybook](https://storybook.js.org/docs/basics/introduction/)
-
-[Eslint](https://eslint.org/docs/user-guide/configuring)
-
-[Babel](https://babeljs.io/docs/en/configuration)
-
-[Тестирование Cypress](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell)
-
-[Тестирование Detox](https://github.com/wix/Detox/blob/master/docs/README.md)
-
-[Styled-components](https://www.styled-components.com/docs)
+## Notification is simple!!!
