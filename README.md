@@ -52,74 +52,15 @@ export const Example = () => {
 }
 
 ```
-
-## Steps to create a Toast
-
-1.  Import functions from the library
-
-```
-  import { ToastPortal, useToastREf } from 'toast-lib-react'
-```
-
-2.  Create objects with settings for Toast and ToastPortal
-
-```
-   const ToastSettings = {
-       title: 'Success',
-       mode: 'success',
-       message: 'This is example of success toast',
-       animationType: 'move',
-       position: 'topRight',
-   }
-
-   const PortalSettings = {
-       autoClose: false,
-       autoCloseTime: 3000,
-       position: 'topRight',
-       margin: 'none',
-   }
-```
-
-3. Distract `toastRef` and `addToast` from `useToastRef()` inside your component
-
-```
-    const { toastRef, addToast } = useToastRef()
-
-```
-
-4. Create event handler with Toast settings `ToastSettings` and call the Toast
-
-```
-    const addSuccess = () => addToast({
-        ...DefaultSuccessProperties })
-
-    <button onClick={addSuccess}> Test Success Toast </button>
-```
-
-5. Place `ToastPortal` with `useToastRef` and `PortalSettings`
-
-```
-    return (
-        <>
-           <button onClick={addSuccess}>
-               Test Success Toast
-           </button>
-           <ToastPortal
-               ref={toastRef}
-               {...PortalSettings} />
-           </>
-    )
-```
-
 ## Available settings
 
 ### Toast:
 
-- `title` - any text
+- `title` - string
 - `mode` - 'info', 'success', 'warning', 'error'
-- `message` - any text'
+- `message` - string
 - `backgroundColor` - string
-- `animationType` - 'fade', 'scale', 'move'
+- `animationType` - 'scale', 'move'
 - `position` - 'topRight', 'topLeft', 'bottomRight', bottomLeft'
 
 ### TaostPortal:
@@ -127,6 +68,7 @@ export const Example = () => {
 - `autoClose` - boolean
 - `autoCloseTime` - number
 - `position` - 'topRight', 'topLeft', 'bottomRight', bottomLeft'
-- `margin` - 'none', 'small'(5px), 'medium'(10px), 'large'(20px)
+- `margin` - 'none', 'small', 'medium', 'large'
 
-## Notification is simple!!!
+## Enjoy
+Create by BirmiiYo 
