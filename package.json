@@ -52,8 +52,9 @@
     "react-dom": "^18.2.0"
   },
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "serve-storybook": "serve storybook-static",
     "build": "rollup -c",
     "lint": "eslint src/**/*.{ts,tsx,json}",
     "lint:fix": "eslint src/**/*.{ts,tsx,json}",
