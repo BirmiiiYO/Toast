@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
-import { ToastContainer } from '@/components/ToastContainer'
-import { ToastBlockProps } from '@/components/ToastContainer/types'
+import { ToastContainer } from '@/components/ToastPortal'
+import { ToastBlockProps } from '@/components/ToastPortal/types'
 import {
   ToastAnimation,
   ToastMode,
@@ -48,13 +48,14 @@ export const TestToast: FC<ToastBlockProps> = (props) => {
       animationType: ToastAnimation.MOVE,
       position,
     })
+    const buttons = [{id:1, func:addSuccess, text: 'Success Toast'},
+    {id:2,func:addInfo, text: 'Info Toast'},
+    {id:3,func:addWarning, text: 'Warning Toast'},
+    {id:4,func:addError, text: 'Error Toast'}]
 
   return (
     <>
-      <Button onClick={addSuccess}>Success Toast</Button>
-      <Button onClick={addInfo}>Info Toast</Button>
-      <Button onClick={addWarning}>Warning Toast</Button>
-      <Button onClick={addError}>Error Toast</Button>
+      {buttons.map(btn => <Button key={btn.id} onClick={btn.func}>{btn.text}</Button>)}
       <ToastContainer ref={toastRef} {...props} />
     </>
   )

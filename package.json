@@ -7,18 +7,11 @@
     "@babel/preset-env": "^7.18.6",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
+    "@rollup/plugin-alias": "^4.0.2",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.1",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-alias": "^4.0.2",
     "@rollup/plugin-image": "^3.0.1",
-    "@storybook/addon-actions": "^6.5.9",
-    "@storybook/addon-essentials": "^6.5.9",
-    "@storybook/addon-interactions": "^6.5.9",
-    "@storybook/addon-links": "^6.5.9",
-    "@storybook/builder-webpack4": "^6.5.9",
-    "@storybook/manager-webpack4": "^6.5.9",
-    "@storybook/testing-library": "^0.0.13",
+    "@rollup/plugin-node-resolve": "^13.3.0",
     "@svgr/rollup": "^6.5.1",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.6",
@@ -38,18 +31,11 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "prettier": "^2.7.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "rollup": "^2.75.7",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-typescript2": "^0.32.1",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
     "typescript": "^4.7.4",
     "typescript-plugin-styled-components": "^2.0.0"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
@@ -61,7 +47,16 @@
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc"
   },
   "dependencies": {
-    "@storybook/react": "^6.5.9",
+    "@storybook/react": "^6.5.15",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack4": "^6.5.9",
+    "@storybook/manager-webpack4": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "styled-components": "^5.3.5",
     "uuid": "^8.1.1"
   }

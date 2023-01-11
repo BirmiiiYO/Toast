@@ -4,7 +4,6 @@ import babel from '@rollup/plugin-babel'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
-import typescript from 'rollup-plugin-typescript2'
 import image from '@rollup/plugin-image';
 import svgr from '@svgr/rollup'
 import alias from '@rollup/plugin-alias'
@@ -39,7 +38,6 @@ export default {
     peerDepsExternal(),
     commonjs(),
     resolve(),
-    typescript({ useTsconfigDeclarationDir: true }),
   ],
   external: ["styled-components"],
 }

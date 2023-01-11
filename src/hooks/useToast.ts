@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 
-import { ToastContainer } from '@/components/ToastContainer'
+import { ToastContainer } from '@/components/ToastPortal'
 import { TToastProps } from '@/types/toastParams'
 
 type ToastPortalRef = React.ElementRef<typeof ToastContainer>

@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-import styled from 'styled-components'
+import styled from "styled-components"
 
 import { setAnimation } from '@/utilities/setAnimation'
 import { setBgColor } from '@/utilities/setBgColor'

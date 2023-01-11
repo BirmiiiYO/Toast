@@ -82,8 +82,7 @@ export const ToastContainer = forwardRef<RefType, ToastBlockProps>(
                />
               ))}
           </ToastBlock>,
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          document.getElementById(portalId)!
+          document.getElementById(portalId) as Element
         )
       : null
   }
